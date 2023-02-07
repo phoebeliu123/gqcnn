@@ -35,7 +35,8 @@ import sys
 import numpy as np
 import skimage.transform as skt
 
-from autolab_core import Logger
+# from autolab_core import Logger
+from autolab_core.autolab_core.logger import Logger
 from .enums import GripperMode
 
 # Set up logger.

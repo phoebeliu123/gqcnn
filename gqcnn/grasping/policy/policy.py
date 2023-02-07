@@ -41,11 +41,20 @@ import scipy.ndimage.filters as snf
 import scipy.stats as ss
 from sklearn.mixture import GaussianMixture
 
-import autolab_core.utils as utils
-from autolab_core import (Point, Logger, BinaryImage, ColorImage,
-                          DepthImage, RgbdImage, SegmentationImage,
-                          CameraIntrinsics)
-from visualization import Visualizer2D as vis
+# import autolab_core.utils as utils
+from autolab_core.autolab_core import utils as utils
+
+# from autolab_core import (Point, Logger, BinaryImage, ColorImage,
+                          # DepthImage, RgbdImage, SegmentationImage,
+                          # CameraIntrinsics)
+from autolab_core.autolab_core.points import Point
+from autolab_core.autolab_core.logger import Logger
+from autolab_core.autolab_core.image import (BinaryImage, ColorImage, DepthImage, RgbdImage, SegmentationImage)
+from autolab_core.autolab_core.camera_intrinsics import CameraIntrinsics
+
+
+# from visualization import Visualizer2D as vis
+from visualization.visualization.visualization2d import Visualizer2D as vis
 
 from ..constraint_fn import GraspConstraintFnFactory
 from ..grasp import Grasp2D, SuctionPoint2D, MultiSuctionPoint2D

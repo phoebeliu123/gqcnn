@@ -34,8 +34,14 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 
-from autolab_core import Point, Logger, DepthImage
-from visualization import Visualizer2D as vis
+# from autolab_core import Point, Logger, DepthImage
+from autolab_core.autolab_core.points import Point
+from autolab_core.autolab_core.logger import Logger
+from autolab_core.autolab_core.image import DepthImage
+
+
+# from visualization import Visualizer2D as vis
+from visualization.visualization.visualization2d import Visualizer2D as vis
 
 from ...grasping import Grasp2D, SuctionPoint2D
 from ...utils import GeneralConstants, NoValidGraspsException

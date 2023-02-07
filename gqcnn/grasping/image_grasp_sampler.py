@@ -39,9 +39,15 @@ import scipy.ndimage.filters as snf
 import scipy.spatial.distance as ssd
 import scipy.stats as ss
 
-from autolab_core import (Point, RigidTransform, Logger,
-                          DepthImage, RgbdImage, GdImage)
-from visualization import Visualizer2D as vis
+# from autolab_core import (Point, RigidTransform, Logger,
+                          # DepthImage, RgbdImage, GdImage)
+from autolab_core.autolab_core.points import Point
+from autolab_core.autolab_core.rigid_transformations import RigidTransform
+from autolab_core.autolab_core.logger import Logger
+from autolab_core.autolab_core.image import (DepthImage, RgbdImage, GdImage)
+
+# from visualization import Visualizer2D as vis
+from visualization.visualization.visualization2d import Visualizer2D as vis
 
 from .grasp import Grasp2D, SuctionPoint2D, MultiSuctionPoint2D
 

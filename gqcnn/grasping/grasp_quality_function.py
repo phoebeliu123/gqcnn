@@ -36,8 +36,14 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 
-import autolab_core.utils as utils
-from autolab_core import Point, PointCloud, RigidTransform, Logger, DepthImage
+# import autolab_core.utils as utils
+from autolab_core.autolab_core import utils as utils
+
+# from autolab_core import Point, PointCloud, RigidTransform, Logger, DepthImage
+from autolab_core.autolab_core.points import Point, PointCloud
+from autolab_core.autolab_core.rigid_transformations import RigidTransform
+from autolab_core.autolab_core.logger import Logger
+from autolab_core.autolab_core.image import DepthImage
 
 from ..model import get_gqcnn_model, get_fc_gqcnn_model
 from .grasp import SuctionPoint2D
