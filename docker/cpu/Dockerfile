@@ -1,4 +1,5 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
+ARG DEBIAN_FRONTEND=noninteractive
 
 MAINTAINER Vishal Satish <vsatish@berkeley.edu>
 
@@ -31,7 +32,7 @@ RUN curl -L http://download.osgeo.org/libspatialindex/spatialindex-src-1.8.5.tar
     cd ..
 
 # Install pip (`apt-get install python-pip` causes trouble w/ networkx).
-RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
+RUN curl -O https://bootstrap.pypa.io/pip/3.6/get-pip.py && \
 	python3 get-pip.py && \
 	rm get-pip.py
 
@@ -50,7 +51,7 @@ RUN python3 -m pip install -r gqcnn/requirements/cpu_requirements.txt
 # Install the library in editable mode because it's more versatile (in case we want to develop or if users want to modify things)
 # Keep the egg outside of the library in site-packages in case we want to mount the library (overwriting it) for development with docker
 ENV PYTHONPATH ${work_dir}/gqcnn
-WORKDIR /usr/local/lib/python3.5/site-packages/
+WORKDIR /usr/local/lib/python3.6/site-packages/
 RUN python3 ${work_dir}/gqcnn/setup.py develop --docker
 
 # Move to the top-level gqcnn package dir.
